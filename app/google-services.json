@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "571841545566",
+    "project_id": "postpc-ex7-876ee",
+    "storage_bucket": "postpc-ex7-876ee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:571841545566:android:057fb56ede8b7df58cbbcf",
+        "android_client_info": {
+          "package_name": "com.example.yonatan_gal_post_pc_7"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "571841545566-38v5kao33es03f6mg9j92pqd77v2mrih.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBihSDrW7o5XdmmCjdov45EjpjpE_QFeuQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "571841545566-38v5kao33es03f6mg9j92pqd77v2mrih.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
