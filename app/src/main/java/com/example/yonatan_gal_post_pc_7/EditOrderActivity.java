@@ -100,32 +100,24 @@ public class EditOrderActivity extends AppCompatActivity {
                     else
                     {
                         Order order = value.toObject(Order.class);
-                        if (order.getStatus().equals(Constants.DONE))
+                        String curStatus = order.getStatus();
+                        if (curStatus.equals(Constants.DONE))
                         {
                             //todo go to new activity
                         }
-                        else if (order.getStatus().equals(Constants.IN_PROGRESS))
+                        else if (curStatus.equals(Constants.IN_PROGRESS))
                         {
                             ///todo go to in progress activity
                         }
 
-                        else if (order.getStatus().equals(Constants.READY))
+                        else if (curStatus.equals(Constants.READY))
                         {
                             //todo go to ready activity
                         }
                     }
                 });
 
-
-
-
-
-
-
-
-
-
-        });
+        };
 
     }
-}
+
