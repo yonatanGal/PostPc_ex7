@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
                     {
                         if (result == null)
                         {
-                            //todo: go to new activity screen
+                            goToActivity(NewOrderActivity.class, null);
                         }
                         Order order = result.toObject(Order.class);
                         if (order == null)

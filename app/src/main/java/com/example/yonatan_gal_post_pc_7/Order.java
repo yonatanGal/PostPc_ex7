@@ -33,6 +33,10 @@ public class Order implements Serializable {
         this.comment = otherOrder.getComment();
     }
 
+    public Order() {
+        this("", false, false, 0, "", "");
+    }
+
 
     public void setComment(String comment) {
         this.comment = comment;
