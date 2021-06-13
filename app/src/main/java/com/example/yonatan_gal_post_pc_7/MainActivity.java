@@ -16,17 +16,23 @@ public class MainActivity extends AppCompatActivity {
     FirebaseFirestore db;
     SharedPreferences sp;
     String currentOrderId;
+    myApp app;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        app = new myApp();
         sp = PreferenceManager.getDefaultSharedPreferences(this);
         db = FirebaseFirestore.getInstance();
 
         currentOrderId = sp.getString("order_id", null);
-        if (currentOrderId != null)
+        if (currentOrderId == null)
+        {
+            goToActivity(NewOrderActivity.class, null);
+        }
+
+        else
         {
             db.collection("orders").document(currentOrderId).get().
                     addOnSuccessListener(result ->
@@ -38,12 +44,12 @@ public class MainActivity extends AppCompatActivity {
                         Order order = result.toObject(Order.class);
                         if (order == null)
                         {
-                            //todo: go to new activity screen
+                            goToActivity(NewOrderActivity.class, null);
                         }
                         String status = order.getStatus();
                         if (status.equals(Constants.WAITING))
                         {
-                            //todo go to edit activity screen
+                            goToActivity(EditOrderActivity.class, order);
                         }
                         else if (status.equals(Constants.IN_PROGRESS))
                         {
@@ -55,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                         else
                         {
-                            //todo: start new activity because status==done
+                            goToActivity(NewOrderActivity.class, null);
                         }
                     });
         }

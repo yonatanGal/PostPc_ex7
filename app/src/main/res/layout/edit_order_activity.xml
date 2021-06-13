@@ -1,39 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
 
     <TextView
-        android:id="@+id/new_order_title"
+        android:id="@+id/edit_order_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:text="New Order"
+        android:text="Edit Order"
         android:textSize="32dp"
         android:layout_marginTop="10dp"
         android:textColor="@color/purple_200"/>
 
-
-
-    <EditText
-        android:id="@+id/new_order_costumer_name"
+    <TextView
+        android:id="@+id/edit_order_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/new_order_title"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginTop="16dp"
-        android:hint="please enter your name :)"/>
+        app:layout_constraintTop_toBottomOf="@id/edit_order_title"
+        android:layout_marginTop="8dp"
+        android:text="You Can Still Change Your Order! But Hurrt Up..."/>
+
 
 
     <CheckBox
-        android:id="@+id/new_order_hummus_checkbox"
+        android:id="@+id/edit_order_hummus_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/new_order_thaini_checkbox"
+        app:layout_constraintTop_toBottomOf="@+id/edit_order_thaini_checkbox"
         android:layout_marginTop="8dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -43,7 +44,7 @@
 
 
     <CheckBox
-        android:id="@+id/new_order_thaini_checkbox"
+        android:id="@+id/edit_order_thaini_checkbox"
         android:layout_width="86dp"
         android:layout_height="41dp"
         android:layout_marginTop="16dp"
@@ -52,14 +53,14 @@
         android:text="Thaini"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/new_order_costumer_name" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_order_text" />
 
 
     <EditText
-        android:id="@+id/new_order_pickles"
+        android:id="@+id/edit_order_pickles"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/new_order_hummus_checkbox"
+        app:layout_constraintTop_toBottomOf="@+id/edit_order_hummus_checkbox"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:hint="Pickles amount, from 0 to 10"
@@ -67,31 +68,35 @@
 
 
     <EditText
-        android:id="@+id/new_order_comment"
+        android:id="@+id/edit_order_comment"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/new_order_pickles"
+        app:layout_constraintTop_toBottomOf="@id/edit_order_pickles"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         android:hint="Comment:"
         android:layout_marginTop="16dp"/>
 
     <Button
-        android:id="@+id/new_order_place_order"
+        android:id="@+id/edit_order_change_order"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/new_order_comment"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_order_comment"
+        app:layout_constraintRight_toLeftOf="@id/edit_order_delete_button"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginTop="40dp"
-        android:text="Place Order!"
+        android:text="Change Order!"
         />
 
-
-
-
-
-
+    <Button
+        android:id="@+id/edit_order_delete_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toRightOf="@+id/edit_order_change_order"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_order_comment"
+        android:layout_marginTop="40dp"
+        android:text="Delete Order"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
