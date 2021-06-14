@@ -9,6 +9,7 @@ import android.widget.Button;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class ReadyActivity extends AppCompatActivity {
@@ -24,6 +25,7 @@ public class ReadyActivity extends AppCompatActivity {
         setContentView(R.layout.ready_activity);
         app = new MyApp();
         sp = PreferenceManager.getDefaultSharedPreferences(this);
+        FirebaseApp.initializeApp(this);
         db = FirebaseFirestore.getInstance();
         Intent incomeIntent = getIntent();
         this.order = (Order) incomeIntent.getSerializableExtra("order");

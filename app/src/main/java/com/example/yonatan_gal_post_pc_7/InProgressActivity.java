@@ -8,6 +8,7 @@ import android.preference.PreferenceManager;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.ListenerRegistration;
 
@@ -22,6 +23,7 @@ public class InProgressActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.in_progress_activity);
         sp = PreferenceManager.getDefaultSharedPreferences(this);
+        FirebaseApp.initializeApp(this);
         db = FirebaseFirestore.getInstance();
         app = new MyApp();
         Intent incomeIntent = getIntent();

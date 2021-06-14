@@ -14,6 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.ListenerRegistration;
 
@@ -40,6 +41,7 @@ public class EditOrderActivity extends AppCompatActivity {
         setContentView(R.layout.edit_order_activity);
         app = new MyApp();
         sp = PreferenceManager.getDefaultSharedPreferences(this);
+        FirebaseApp.initializeApp(this);
         db = FirebaseFirestore.getInstance();
 
         this.comment = findViewById(R.id.edit_order_comment);

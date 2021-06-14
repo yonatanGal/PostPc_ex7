@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class NewOrderActivity extends AppCompatActivity {
@@ -35,6 +36,7 @@ public class NewOrderActivity extends AppCompatActivity {
         setContentView(R.layout.new_order_activity);
         app = new MyApp();
         sp = PreferenceManager.getDefaultSharedPreferences(this);
+        FirebaseApp.initializeApp(this);
         db = FirebaseFirestore.getInstance();
 
         this.costumerName = findViewById(R.id.new_order_costumer_name);

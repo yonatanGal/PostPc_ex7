@@ -4,6 +4,6 @@ public class Constants {
 
     final static String WAITING = "waiting";
     final static String READY = "ready";
-    final static String IN_PROGRESS = "in_progress";
+    final static String IN_PROGRESS = "in-progress";
     final static String DONE = "done";
 }

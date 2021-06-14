@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import javax.annotation.Nullable;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         app = new MyApp();
         sp = PreferenceManager.getDefaultSharedPreferences(this);
+        FirebaseApp.initializeApp(this);
         db = FirebaseFirestore.getInstance();
 
         currentOrderId = sp.getString("order_id", null);
