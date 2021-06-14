@@ -30,7 +30,7 @@ public class EditOrderActivity extends AppCompatActivity {
     Button deleteOrder;
     Order order;
     ListenerRegistration status;
-    myApp app;
+    MyApp app;
 
 
 
@@ -38,7 +38,7 @@ public class EditOrderActivity extends AppCompatActivity {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.edit_order_activity);
-        app = new myApp();
+        app = new MyApp();
         sp = PreferenceManager.getDefaultSharedPreferences(this);
         db = FirebaseFirestore.getInstance();
 

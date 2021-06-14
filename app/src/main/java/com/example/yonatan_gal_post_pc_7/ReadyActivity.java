@@ -16,13 +16,13 @@ public class ReadyActivity extends AppCompatActivity {
     FirebaseFirestore db;
     Button gotItButton;
     Order order;
-    myApp app;
+    MyApp app;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ready_activity);
-        app = new myApp();
+        app = new MyApp();
         sp = PreferenceManager.getDefaultSharedPreferences(this);
         db = FirebaseFirestore.getInstance();
         Intent incomeIntent = getIntent();

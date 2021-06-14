@@ -4,11 +4,9 @@ import android.app.Application;
 
 import com.google.firebase.firestore.FirebaseFirestore;
 
-public class myApp extends Application {
+public class MyApp extends Application {
 
-    public FirebaseFirestore firestore;
-
-    public myApp()
+    public MyApp()
     {
     }
 

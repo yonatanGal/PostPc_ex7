@@ -3,7 +3,6 @@ package com.example.yonatan_gal_post_pc_7;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.preference.PreferenceManager;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -28,13 +27,13 @@ public class NewOrderActivity extends AppCompatActivity {
     EditText pickles;
     Button placeOrder;
     Order order;
-    myApp app;
+    MyApp app;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.new_order_activity);
-        app = new myApp();
+        app = new MyApp();
         sp = PreferenceManager.getDefaultSharedPreferences(this);
         db = FirebaseFirestore.getInstance();
 

@@ -16,13 +16,13 @@ public class MainActivity extends AppCompatActivity {
     FirebaseFirestore db;
     SharedPreferences sp;
     String currentOrderId;
-    myApp app;
+    MyApp app;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        app = new myApp();
+        app = new MyApp();
         sp = PreferenceManager.getDefaultSharedPreferences(this);
         db = FirebaseFirestore.getInstance();
 

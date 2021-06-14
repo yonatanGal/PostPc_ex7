@@ -15,7 +15,7 @@ public class InProgressActivity extends AppCompatActivity {
     SharedPreferences sp;
     FirebaseFirestore db;
     Order order;
-    myApp app;
+    MyApp app;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -23,7 +23,7 @@ public class InProgressActivity extends AppCompatActivity {
         setContentView(R.layout.in_progress_activity);
         sp = PreferenceManager.getDefaultSharedPreferences(this);
         db = FirebaseFirestore.getInstance();
-        app = new myApp();
+        app = new MyApp();
         Intent incomeIntent = getIntent();
         this.order = (Order) incomeIntent.getSerializableExtra("order");
 
