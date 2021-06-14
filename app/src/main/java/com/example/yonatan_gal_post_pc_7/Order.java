@@ -51,7 +51,7 @@ public class Order implements Serializable {
     }
 
     public void setPickles(int pickles) {
-        this.pickles = pickles;
+        this.pickles = parsePickles(pickles);
     }
 
     public void setStatus(String status) {

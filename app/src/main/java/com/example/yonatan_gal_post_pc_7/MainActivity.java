@@ -53,11 +53,11 @@ public class MainActivity extends AppCompatActivity {
                         }
                         else if (status.equals(Constants.IN_PROGRESS))
                         {
-                            //todo: go to in progress activity
+                            goToActivity(InProgressActivity.class, order);
                         }
                         else if (status.equals(Constants.READY))
                         {
-                            //todo: go to ready activity
+                            goToActivity(ReadyActivity.class, order);
                         }
                         else
                         {
@@ -66,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
                     });
         }
     }
-
     public void goToActivity(Class<?> activity, @Nullable Order order)
     {
         Intent intent = new Intent(this, activity);

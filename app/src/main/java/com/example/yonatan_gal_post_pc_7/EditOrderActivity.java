@@ -48,6 +48,7 @@ public class EditOrderActivity extends AppCompatActivity {
         this.pickles = findViewById(R.id.edit_order_pickles);
         this.changeOrder = findViewById(R.id.edit_order_change_order);
         this.text = findViewById(R.id.edit_order_text);
+        this.deleteOrder = findViewById(R.id.edit_order_delete_button);
 
         Intent incomeIntent = getIntent();
         this.order = (Order) incomeIntent.getSerializableExtra("order");
@@ -57,7 +58,7 @@ public class EditOrderActivity extends AppCompatActivity {
         this.hummus.setChecked(order.isHummus());
         this.thaini.setChecked(order.isThaini());
         this.comment.setText(order.getComment());
-        this.pickles.setText(order.getPickles());
+        this.pickles.setText(Integer.toString(order.getPickles()));
 
 
         changeOrder.setOnClickListener(v ->
@@ -70,6 +71,7 @@ public class EditOrderActivity extends AppCompatActivity {
             order.setHummus(this.hummus.isChecked());
             order.setThaini(this.thaini.isChecked());
             order.setComment(this.comment.getText().toString());
+            this.pickles.setText(String.valueOf(order.getPickles()));
 
             db.collection("orders").document(order.getId()).update("hummus", order.isHummus());
             db.collection("orders").document(order.getId()).update("thaini", order.isThaini());
@@ -103,16 +105,24 @@ public class EditOrderActivity extends AppCompatActivity {
                         String curStatus = order.getStatus();
                         if (curStatus.equals(Constants.DONE))
                         {
-                            //todo go to new activity
+                            Intent editIntent = new Intent(this, MainActivity.class);
+                            editIntent.putExtra("order", order);
+                            startActivity(editIntent);
+                            finish();
                         }
                         else if (curStatus.equals(Constants.IN_PROGRESS))
                         {
-                            ///todo go to in progress activity
+                            Intent inProgressIntent = new Intent(this, InProgressActivity.class);
+                            inProgressIntent.putExtra("order", order);
+                            startActivity(inProgressIntent);
+                            finish();
                         }
 
                         else if (curStatus.equals(Constants.READY))
                         {
-                            //todo go to ready activity
+                            Intent readyIntent = new Intent(this, ReadyActivity.class);
+                            startActivity(readyIntent);
+                            finish();
                         }
                     }
                 });
